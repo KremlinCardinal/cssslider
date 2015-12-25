@@ -1,0 +1,100 @@
+html, body {
+    font-size: 12px;
+    font-family: "Open Sans",serif;
+    color: #AAA;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SLIDER STRUCTURE */
+
+#slider {
+    background: #000;
+    border: 5px solid #eaeaea;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    height: 320px;
+    width: 680px;
+    margin: 40px auto 0;
+    overflow: visible;
+    position: relative;
+}
+
+/* HIDE ALL OUTSIDE OF THE SLIDER */
+#mask {
+    overflow: hidden;
+    height: 320px;
+}
+
+/* IMAGE LIST */
+
+#slider ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#slider li {
+    width: 680px;  /* Width Image */
+    height: 320px; /* Height Image */
+    position: absolute;
+    top: -325px; /* Original Position - Outside of the Slider */
+    list-style: none;
+}
+
+/* ANIMATIONS */
+
+#slider li.firstanimation {
+    animation: cycle 25s linear infinite;
+}
+
+#slider li.secondanimation {
+    animation: cycletwo 25s linear infinite;
+}
+
+#slider li.thirdanimation {
+    animation: cyclethree 25s linear infinite;
+}
+
+#slider li.fourthanimation {
+    animation: cyclefour 25s linear infinite;
+}
+
+#slider li.fifthanimation {
+    animation: cyclefive 25s linear infinite;
+}
+
+/* TOOLTIP */
+
+#slider .tooltip {
+    background: rgba(0,0,0,0.7);
+    width: 300px;
+    height: 60px;
+    position: relative;
+    bottom: 75px;
+    left: -320px;
+    transition: all 0.3s ease-in-out;
+}
+
+#slider .tooltip h1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 60px;
+    padding: 0 0 0 10px;
+}
+
+#slider li#first:hover .tooltip,
+#slider li#second:hover .tooltip,
+#slider li#third:hover .tooltip,
+#slider li#fourth:hover .tooltip,
+#slider li#fifth:hover .tooltip {
+    left: 0px;
+}
+
+/* PAUSE ON HOVER */
+#slider:hover li,
+#slider:hover .progress-bar {
+    animation-play-state: paused;
+}
